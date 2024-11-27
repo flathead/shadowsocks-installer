@@ -23,11 +23,27 @@ random_password() {
 
 # Load messages from JSON file
 load_messages() {
+  # Check if jq is installed
+  if ! command -v jq &>/dev/null; then
+    echo -e "${YELLOW}jq не найден, выполняется установка...${RESET}"
+    if command -v apt &>/dev/null; then
+      sudo apt update
+      sudo apt install -y jq
+    elif command -v yum &>/dev/null; then
+      sudo yum install -y jq
+    else
+      echo -e "${RED}Утилита jq не установлена. Пожалуйста, установите её вручную.${RESET}"
+      exit 1
+    fi
+  fi
+
+  # Check if language file exists
   if ! [ -f "$LANG_FILE" ]; then
-    echo -e "${RED}Language file not found: $LANG_FILE${RESET}"
+    echo -e "${RED}Языковой файл не найден: $LANG_FILE${RESET}"
     exit 1
   fi
 
+  # Load messages from JSON file
   MSG_USAGE=$(jq -r ".$LANGUAGE.MSG_USAGE" $LANG_FILE)
   MSG_COMMANDS=$(jq -r ".$LANGUAGE.MSG_COMMANDS" $LANG_FILE)
   MSG_SETUP=$(jq -r ".$LANGUAGE.MSG_SETUP" $LANG_FILE)
@@ -83,7 +99,7 @@ check_docker() {
 setup() {
   # Remove installer script
   rm "/tmp/installer.sh"
-  
+
   # Check jq installation
   if ! command -v jq &>/dev/null; then
     echo -e "${RED}$MSG_JQ_NOT_INSTALLED${RESET}"
