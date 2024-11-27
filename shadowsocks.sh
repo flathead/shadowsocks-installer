@@ -78,7 +78,7 @@ load_messages() {
   MSG_REMOVING_CONTAINER=$(jq -r ".$LANGUAGE.MSG_REMOVING_CONTAINER // \"Removing Shadowsocks container...\"" $LANG_FILE)
   MSG_CONTAINER_REMOVED=$(jq -r ".$LANGUAGE.MSG_CONTAINER_REMOVED // \"Removing Shadowsocks image...\"" $LANG_FILE)
   MSG_JQ_NOT_INSTALLED=$(jq -r ".$LANGUAGE.MSG_JQ_NOT_INSTALLED // \"jq is not installed. Installing jq...\"" $LANG_FILE)
-  MSG_JQ_PLEASE_INSTALL_MANUALLY=$(jq -r ".$LANGUAGE.MSG_JQ_PLEASE_INSTALL_MANUALLY // \"jq is not installed. Please install jq manually.\" $LANG_FILE)
+  MSG_JQ_PLEASE_INSTALL_MANUALLY=$(jq -r ".$LANGUAGE.MSG_JQ_PLEASE_INSTALL_MANUALLY // \"jq is not installed. Please install jq manually.\"" $LANG_FILE)
 }
 
 # Print usage
