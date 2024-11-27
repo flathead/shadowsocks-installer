@@ -11,14 +11,22 @@ DEFAULT_LANGUAGE="en"
 
 # Create .env file if it doesn't exist and set the language
 create_env_file() {
+    # Убедитесь, что папка APP_DIR существует
+    sudo mkdir -p "$APP_DIR"
     if [ ! -f "$ENV_FILE" ]; then
-        # Убедитесь, что папка APP_DIR существует
-        sudo mkdir -p "$APP_DIR"
-        sudo touch "$ENV_FILE"
+        # Создаём .env файл, если он отсутствует
         echo "LANG=$1" | sudo tee "$ENV_FILE" > /dev/null
         echo -e ".env file is created, current language: $1"
     else
-        echo -e "File .env already exists. Current language: $(grep -E '^LANG=' "$ENV_FILE" | cut -d'=' -f2)"
+        # Читаем текущий язык из .env
+        CURRENT_LANG=$(grep -E '^LANG=' "$ENV_FILE" | cut -d'=' -f2)
+        if [ "$CURRENT_LANG" != "$1" ]; then
+            # Обновляем LANG, если он отличается от переданного
+            sudo sed -i "s/^LANG=.*/LANG=$1/" "$ENV_FILE"
+            echo -e "Updated LANG in .env from $CURRENT_LANG to $1"
+        else
+            echo -e "File .env already exists. Current language: $CURRENT_LANG (no changes made)."
+        fi
     fi
 }
 
