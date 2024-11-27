@@ -1,9 +1,9 @@
 # Shadowsocks Kolay Yükleyici
-[![en](https://img.shields.io/badge/lang-en_English-red.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/README.md)
-[![ru](https://img.shields.io/badge/lang-cn_中国人-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ru.md)
+[![en](https://img.shields.io/badge/lang-en_English-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/README.md)
+[![ru](https://img.shields.io/badge/lang-ru_Русский-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ru.md)
 [![cn](https://img.shields.io/badge/lang-cn_中国人-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.cn.md)
-[![ir](https://img.shields.io/badge/lang-ir_فارسی-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ir.md)
 [![vn](https://img.shields.io/badge/lang-vn_Tiếng_Việt-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.vn.md)
+[![ir](https://img.shields.io/badge/lang-ir_فارسی-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ir.md)
 
 Bu depo, Docker kullanarak bir **Shadowsocks** sunucusunu yönetmek için araçlar sağlar. İçerir:
 - **Yönetim Komut Dosyası**: Yönetim komut dosyasını ve bağımlılıklarını kurar; Kurulum, başlatma, durdurma, yeniden başlatma ve kaldırma gibi komutlarla Shadowsocks konteynerini kontrol eder.
