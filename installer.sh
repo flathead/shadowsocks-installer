@@ -8,6 +8,16 @@ SCRIPT_DIR="/usr/local/bin"
 SCRIPT_PATH="${SCRIPT_DIR}/vpn"
 DEFAULT_LANGUAGE="en"
 
+# Create .env file if it doesn't exist and set the language
+create_env_file() {
+    if [ ! -f "$ENV_FILE" ]; then
+        echo "LANG=$1" | sudo tee "$ENV_FILE" > /dev/null
+        echo -e ".env file is created, current language: $1"
+    else
+        echo -e "File .env already exists. Current language: $(grep -E '^LANG=' "$ENV_FILE" | cut -d'=' -f2)"
+    fi
+}
+
 # Prepare the environment and run setup
 install() {
     # Создание директории и загрузка файлов
@@ -23,12 +33,13 @@ install() {
 }
 
 # Main script logic
-# Проверка аргументов
+# Check if a language is provided as an argument
 if [ "$#" -eq 0 ]; then
     LANGUAGE="$DEFAULT_LANGUAGE"
 else
     LANGUAGE="$1"
 fi
 
-# Запуск установки
+# Create .env file if it doesn't exist
+create_env_file "$LANGUAGE"
 install "$LANGUAGE"

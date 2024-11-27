@@ -13,12 +13,23 @@ PORT="8388"
 METHOD="aes-256-gcm"
 TZ="UTC+3"
 CONTAINER_NAME="shadowsocks"
-LANGUAGE="en"
+ENV_FILE="/opt/shadowsocks-vpn/.env"
+DEFAULT_LANGUAGE="en"
 LANG_FILE="/opt/shadowsocks-vpn/languages.json"
+LANGUAGE="$DEFAULT_LANGUAGE"
 
 # Generate a random password
 random_password() {
   tr -dc A-Za-z0-9 </dev/urandom | head -c 12
+}
+
+# Load environment variables from .env
+load_env() {
+  if [ -f "$ENV_FILE" ]; then
+    # Read environment variables from .env, overriding existing ones
+    export $(grep -E '^LANG=' "$ENV_FILE" | xargs)
+  fi
+  LANGUAGE="${LANG:-$DEFAULT_LANGUAGE}"
 }
 
 # Load messages from JSON file
@@ -39,7 +50,7 @@ load_messages() {
 
   # Check if language file exists
   if ! [ -f "$LANG_FILE" ]; then
-    echo -e "${RED}Языковой файл не найден: $LANG_FILE${RESET}"
+    echo -e "${RED}Language file not found: $LANG_FILE${RESET}"
     exit 1
   fi
 
@@ -72,12 +83,12 @@ load_messages() {
 print_help() {
   echo -e "${YELLOW}$MSG_USAGE${RESET}"
   echo -e "\n$MSG_COMMANDS"
-  echo -e "  ${BLUE}setup${RESET}    $MSG_SETUP"
-  echo -e "  ${BLUE}start${RESET}    $MSG_START"
-  echo -e "  ${BLUE}stop${RESET}     $MSG_STOP"
-  echo -e "  ${BLUE}restart${RESET}  $MSG_RESTART"
-  echo -e "  ${BLUE}uninstall${RESET} $MSG_UNINSTALL"
-  echo -e "  ${BLUE}--help|-h${RESET} $MSG_HELP"
+  echo -e "  ${BLUE}setup${RESET}          $MSG_SETUP"
+  echo -e "  ${BLUE}start${RESET}          $MSG_START"
+  echo -e "  ${BLUE}stop${RESET}           $MSG_STOP"
+  echo -e "  ${BLUE}restart${RESET}        $MSG_RESTART"
+  echo -e "  ${BLUE}uninstall${RESET}      $MSG_UNINSTALL"
+  echo -e "  ${BLUE}help|--help|-h${RESET} $MSG_HELP"
 }
 
 # Check if Docker is installed and install if necessary
@@ -120,9 +131,9 @@ setup() {
     fi
   fi
 
-  echo -e "${GREEN}======================================={RESET}"
+  echo -e "${GREEN}=======================================${RESET}"
   echo -e "${YELLOW}    $MSG_WELCOME${RESET}"
-  echo -e "${GREEN}======================================={RESET}"
+  echo -e "${GREEN}=======================================${RESET}"
 
   # Generate strong password
   echo -e "${YELLOW}$MSG_GENERATED_PASSWORD_PROCESS${RESET}"
@@ -189,8 +200,12 @@ uninstall() {
   echo -e "${GREEN}$MSG_IMAGE_REMOVED${RESET}"
 }
 
-# Main script logic
-LANGUAGE=${2:-en}
+# Основная логика скрипта
+load_env
+# Переопределение языка через аргументы
+if [ -n "$2" ]; then
+  LANGUAGE="$2"
+fi
 load_messages
 
 case "$1" in
@@ -209,7 +224,7 @@ case "$1" in
   uninstall)
     uninstall
     ;;
-  --help|-h|*)
+  help|--help|-h|*)
     print_help
     ;;
 esac
