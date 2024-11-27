@@ -33,7 +33,7 @@ This repository provides tools for managing a **Shadowsocks** server using Docke
 ### 1. Download and Run the Installer
 
 ```bash
-mkdir -p /opt/shadowsocks-vpn && curl -fsSL https://github.com/flathead/shadowsocks-installer/raw/main/shadowsocks.sh -o /opt/shadowsocks-vpn/shadowsocks.sh && sudo ln -s /opt/shadowsocks-vpn/shadowsocks.sh /usr/local/bin/vpn && chmod -x /opt/shadowsocks-vpn/shadowsocks.sh && vpn setup en
+hash -r && curl -fsSL https://raw.githubusercontent.com/flathead/shadowsocks-installer/refs/heads/master/installer.sh -o /tmp/installer.sh && bash /tmp/installer.sh en
 ```
 
 ### 2. Verify Installation

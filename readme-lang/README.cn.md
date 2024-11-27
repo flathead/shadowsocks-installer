@@ -1,9 +1,9 @@
 # Shadowsocks 简易安装程序
-[![en](https://img.shields.io/badge/lang-en_English-red.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.md)
-[![ru](https://img.shields.io/badge/lang-ru_Русский-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.ru.md)
-[![ir](https://img.shields.io/badge/lang-ir_فارسی-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.ir.md)
-[![tr](https://img.shields.io/badge/lang-tr_Türkçe-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.tr.md)
-[![vn](https://img.shields.io/badge/lang-vn_Tiếng_Việt-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.vn.md)
+[![en](https://img.shields.io/badge/lang-en_English-red.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/README.md)
+[![ru](https://img.shields.io/badge/lang-cn_中国人-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ru.md)
+[![ir](https://img.shields.io/badge/lang-ir_فارسی-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ir.md)
+[![vn](https://img.shields.io/badge/lang-vn_Tiếng_Việt-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.vn.md)
+[![tr](https://img.shields.io/badge/lang-vn_Tiếng_Việt-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.tr.md)
 
 自动 Shadowsocks 部署脚本。
 
@@ -30,7 +30,7 @@
 ### 1. 下载并运行安装程序
 
 ```bash
-mkdir -p /opt/shadowsocks-vpn && curl -fsSL https://github.com/flathead/shadowsocks-installer/raw/main/shadowsocks.sh -o /opt/shadowsocks-vpn/shadowsocks.sh && sudo ln -s /opt/shadowsocks-vpn/shadowsocks.sh /usr/local/bin/vpn && chmod -x /opt/shadowsocks-vpn/shadowsocks.sh && vpn setup cn
+hash -r && curl -fsSL https://raw.githubusercontent.com/flathead/shadowsocks-installer/refs/heads/master/installer.sh -o /tmp/installer.sh && bash /tmp/installer.sh cn
 ```
 
 ### 2. 验证安装

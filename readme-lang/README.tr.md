@@ -1,6 +1,6 @@
 # Shadowsocks Kolay Yükleyici
-[![en](https://img.shields.io/badge/lang-en_English-red.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.gb.md)
-[![ru](https://img.shields.io/badge/lang-ru_Русский-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ru.md)
+[![en](https://img.shields.io/badge/lang-en_English-red.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/README.md)
+[![ru](https://img.shields.io/badge/lang-cn_中国人-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ru.md)
 [![cn](https://img.shields.io/badge/lang-cn_中国人-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.cn.md)
 [![ir](https://img.shields.io/badge/lang-ir_فارسی-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ir.md)
 [![vn](https://img.shields.io/badge/lang-vn_Tiếng_Việt-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.vn.md)
@@ -28,7 +28,7 @@ Bu depo, Docker kullanarak bir **Shadowsocks** sunucusunu yönetmek için araçl
 ### 1. Yükleyiciyi İndirin ve Çalıştırın
 
 ```bash
-sudo mkdir -p /opt/shadowsocks-vpn && curl -fsSL https://raw.githubusercontent.com/flathead/shadowsocks-installer/refs/heads/master/shadowsocks.sh -o /opt/shadowsocks-vpn/shadowsocks.sh && curl -fsSl * -o /opt/shadowsocks-vpn/languages.json && sudo ln -sf /opt/shadowsocks-vpn/shadowsocks.sh /usr/local/bin/vpn && sudo chmod +x /opt/shadowsocks-vpn/shadowsocks.sh && vpn setup tr
+hash -r && curl -fsSL https://raw.githubusercontent.com/flathead/shadowsocks-installer/refs/heads/master/installer.sh -o /tmp/installer.sh && bash /tmp/installer.sh tr
 ```
 
 ### 2. Kurulumu Doğrulayın

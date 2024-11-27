@@ -1,9 +1,9 @@
 # Простой установщик Shadowsocks
-[![en](https://img.shields.io/badge/lang-en_English-red.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.md)
-[![cn](https://img.shields.io/badge/lang-cn_中国人-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.cn.md)
-[![ir](https://img.shields.io/badge/lang-ir_فارسی-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.ir.md)
-[![tr](https://img.shields.io/badge/lang-tr_Türkçe-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.tr.md)
-[![vn](https://img.shields.io/badge/lang-vn_Tiếng_Việt-green.svg)](https://github.com/jonatasemidio/multilanguage-readme-pattern/blob/master/README.vn.md)
+[![en](https://img.shields.io/badge/lang-en_English-red.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/README.md)
+[![cn](https://img.shields.io/badge/lang-cn_中国人-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.cn.md)
+[![ir](https://img.shields.io/badge/lang-ir_فارسی-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.ir.md)
+[![tr](https://img.shields.io/badge/lang-tr_Türkçe-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.tr.md)
+[![vn](https://img.shields.io/badge/lang-vn_Tiếng_Việt-green.svg)](https://github.com/flathead/shadowsocks-installer/blob/master/readme-lang/README.vn.md)
 
 Этот репозиторий предоставляет инструменты для управления сервером **Shadowsocks** с использованием Docker. Он включает:
 - **Скрипт управления**: Устанавливает скрипт управления и его зависимости; Управляет контейнером Shadowsocks с помощью команд: установка, запуск, остановка, перезапуск и удаление.
@@ -28,7 +28,7 @@
 ### 1. Загрузка и запуск установщика
 
 ```bash
-mkdir -p /opt/shadowsocks-vpn && curl -fsSL https://github.com/flathead/shadowsocks-installer/raw/main/shadowsocks.sh -o /opt/shadowsocks-vpn/shadowsocks.sh && sudo ln -s /opt/shadowsocks-vpn/shadowsocks.sh /usr/local/bin/vpn && chmod -x /opt/shadowsocks-vpn/shadowsocks.sh && vpn setup ru
+hash -r && curl -fsSL https://raw.githubusercontent.com/flathead/shadowsocks-installer/refs/heads/master/installer.sh -o /tmp/installer.sh && bash /tmp/installer.sh ru
 ```
 
 ### 2. Проверка установки
