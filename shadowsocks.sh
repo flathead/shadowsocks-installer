@@ -44,6 +44,7 @@ load_messages() {
   fi
 
   # Load messages from JSON file
+  MSG_WELCOME=$(jq -r ".$LANGUAGE.MSG_WELCOME" $LANG_FILE)
   MSG_USAGE=$(jq -r ".$LANGUAGE.MSG_USAGE" $LANG_FILE)
   MSG_COMMANDS=$(jq -r ".$LANGUAGE.MSG_COMMANDS" $LANG_FILE)
   MSG_SETUP=$(jq -r ".$LANGUAGE.MSG_SETUP" $LANG_FILE)
@@ -55,7 +56,11 @@ load_messages() {
   MSG_DOCKER_NOT_INSTALLED=$(jq -r ".$LANGUAGE.MSG_DOCKER_NOT_INSTALLED" $LANG_FILE)
   MSG_UNSUPPORTED_PM=$(jq -r ".$LANGUAGE.MSG_UNSUPPORTED_PM" $LANG_FILE)
   MSG_DOCKER_INSTALLED=$(jq -r ".$LANGUAGE.MSG_DOCKER_INSTALLED" $LANG_FILE)
+  MSG_GENERATED_PASSWORD_PROCESS=$(jq -r ".$LANGUAGE.MSG_GENERATED_PASSWORD_PROCESS" $LANG_FILE)
   MSG_GENERATED_PASSWORD=$(jq -r ".$LANGUAGE.MSG_GENERATED_PASSWORD" $LANG_FILE)
+  MSG_TZ_CHANGE_PROCESS=$(jq -r ".$LANGUAGE.MSG_TZ_CHANGE_PROCESS" $LANG_FILE)
+  MSG_TZ_CHANGE=$(jq -r ".$LANGUAGE.MSG_TZ_CHANGE" $LANG_FILE)
+  MSG_TZ_CHANGED=$(jq -r ".$LANGUAGE.MSG_TZ_CHANGED" $LANG_FILE)
   MSG_PULL_IMAGE=$(jq -r ".$LANGUAGE.MSG_PULL_IMAGE" $LANG_FILE)
   MSG_START_CONTAINER=$(jq -r ".$LANGUAGE.MSG_START_CONTAINER" $LANG_FILE)
   MSG_SETUP_SUCCESS=$(jq -r ".$LANGUAGE.MSG_SETUP_SUCCESS" $LANG_FILE)
@@ -97,6 +102,7 @@ check_docker() {
 
 # Setup Shadowsocks container
 setup() {
+  echo -e "lang: ${LANGUAGE}"
   # Remove installer script
   rm "/tmp/installer.sh"
 
@@ -114,11 +120,23 @@ setup() {
     fi
   fi
 
+  echo -e "${GREEN}======================================={RESET}"
+  echo -e "${YELLOW}    $MSG_WELCOME${RESET}"
+  echo -e "${GREEN}======================================={RESET}"
+
   # Generate strong password
+  echo -e "${YELLOW}$MSG_GENERATED_PASSWORD_PROCESS${RESET}"
   read -p "$MSG_GENERATED_PASSWORD " PASSWORD
   if [ -z "$PASSWORD" ]; then
     PASSWORD=$(random_password)
     echo -e "${YELLOW}$MSG_GENERATED_PASSWORD${RESET} $PASSWORD"
+  fi
+
+  echo -e "${YELLOW}$MSG_TZ_CHANGE_PROCESS${RESET}"
+  read -p "$MSG_TZ_CHANGE " TIMEZONE
+  if [ -z "$TIMEZONE" ]; then
+    TIMEZONE=$TZ
+    echo -e "${YELLOW}$MSG_TZ_CHANGED${RESET} $TIMEZONE"
   fi
 
   check_docker
@@ -127,7 +145,7 @@ setup() {
   docker pull $IMAGE
 
   echo -e "${GREEN}$MSG_START_CONTAINER${RESET}"
-  docker run -e PASSWORD=$PASSWORD -e TZ=$TZ -p $PORT:$PORT -p $PORT:$PORT/udp -d --restart always --name $CONTAINER_NAME $IMAGE
+  docker run -e PASSWORD=$PASSWORD -e TZ=$TIMEZONE -p $PORT:$PORT -p $PORT:$PORT/udp -d --restart always --name $CONTAINER_NAME $IMAGE
 
   IP=$(curl -s ifconfig.me)
   echo -e "\n${GREEN}$MSG_SETUP_SUCCESS${RESET}"
@@ -136,7 +154,7 @@ setup() {
   echo -e "${YELLOW}Server Port:    ${RESET}$PORT"
   echo -e "${YELLOW}Password:       ${RESET}$PASSWORD"
   echo -e "${YELLOW}Encryption:     ${RESET}$METHOD"
-  echo -e "${YELLOW}Timezone:       ${RESET}$TZ"
+  echo -e "${YELLOW}Timezone:       ${RESET}$TIMEZONE"
   echo -e "${BLUE}=======================================${RESET}"
 }
 

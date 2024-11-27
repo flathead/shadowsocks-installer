@@ -1,5 +1,6 @@
 {
   "en": {
+    "MSG_WELCOME": "Welcome to Shadowsocks installer!",
     "MSG_USAGE": "Usage: vpn [command]",
     "MSG_COMMANDS": "Commands:",
     "MSG_SETUP": "Install and configure the Shadowsocks container",
@@ -11,7 +12,11 @@
     "MSG_DOCKER_NOT_INSTALLED": "Docker is not installed. Installing Docker...",
     "MSG_UNSUPPORTED_PM": "Unsupported package manager. Please install Docker manually.",
     "MSG_DOCKER_INSTALLED": "Docker is installed.",
+    "MSG_GENERATED_PASSWORD_PROCESS": "Please enter a password to generate. If left blank, a random password will be generated.",
     "MSG_GENERATED_PASSWORD": "Generated password:",
+    "MSG_TZ_CHANGE_PROCESS": "Enter the desired timezone (e.g., UTC+3). If left blank, UTC+3 will be used as the default.",
+    "MSG_TZ_CHANGE": "Enter the desired timezone (e.g., UTC+3) [optional]:",
+    "MSG_TZ_CHANGED": "Timezone successfully changed.",
     "MSG_PULL_IMAGE": "Pulling Docker image...",
     "MSG_START_CONTAINER": "Starting container...",
     "MSG_SETUP_SUCCESS": "Shadowsocks is set up successfully!",
@@ -23,6 +28,7 @@
     "MSG_JQ_PLEASE_INSTALL_MANUALLY": "jq is not installed. Please install jq manually."
   },
   "ru": {
+    "MSG_WELCOME": "Добро пожаловать в инсталлятор Shadowsocks!",
     "MSG_USAGE": "Использование: vpn [команда]",
     "MSG_COMMANDS": "Команды:",
     "MSG_SETUP": "Установить и настроить контейнер Shadowsocks",
@@ -34,7 +40,11 @@
     "MSG_DOCKER_NOT_INSTALLED": "Docker не установлен. Установка Docker...",
     "MSG_UNSUPPORTED_PM": "Неподдерживаемый менеджер пакетов. Установите Docker вручную.",
     "MSG_DOCKER_INSTALLED": "Docker установлен.",
+    "MSG_GENERATED_PASSWORD_PROCESS": "Пожалуйста, введите пароль для генерации. Если оставить пустым, будет сгенерирован случайный пароль.",
     "MSG_GENERATED_PASSWORD": "Сгенерированный пароль:",
+    "MSG_TZ_CHANGE_PROCESS": "Введите часовую зону (например, UTC+3). Если оставить пустым, будет использоваться UTC+3 по умолчанию.",
+    "MSG_TZ_CHANGE": "Введите желаемую часовую зону (например, UTC+3) [необязательно]:",
+    "MSG_TZ_CHANGED": "Часовая зона успешно изменена.",
     "MSG_PULL_IMAGE": "Загрузка образа Docker...",
     "MSG_START_CONTAINER": "Запуск контейнера...",
     "MSG_SETUP_SUCCESS": "Shadowsocks успешно настроен!",
@@ -46,6 +56,7 @@
     "MSG_JQ_PLEASE_INSTALL_MANUALLY": "jq не установлен. Пожалуйста, установите jq вручную."
   },
   "tr": {
+    "MSG_WELCOME": "Shadowsocks yükleyiciye hos geldiniz!",
     "MSG_USAGE": "Kullanım: vpn [komut]",
     "MSG_COMMANDS": "Komutlar:",
     "MSG_SETUP": "Shadowsocks konteynerini kur ve yapılandır",
@@ -57,7 +68,11 @@
     "MSG_DOCKER_NOT_INSTALLED": "Docker yüklü değil. Docker yükleniyor...",
     "MSG_UNSUPPORTED_PM": "Desteklenmeyen paket yöneticisi. Lütfen Docker'ı manuel olarak yükleyin.",
     "MSG_DOCKER_INSTALLED": "Docker yüklendi.",
+    "MSG_GENERATED_PASSWORD_PROCESS": "Lütfen bir sifre girin. Bos bırakıldıgında rastgele bir sifre olusturulacak.",
     "MSG_GENERATED_PASSWORD": "Oluşturulan şifre:",
+    "MSG_TZ_CHANGE_PROCESS": "Tarih zonunu girin (Örnek: UTC+3). Bos bırakıldıgında UTC+3 kullanılacak.",
+    "MSG_TZ_CHANGE": "Tarih zonunu girin (Örnek: UTC+3) [opsiyonel]:",
+    "MSG_TZ_CHANGED": "Tarih zonu basariyla degistirildi.",
     "MSG_PULL_IMAGE": "Docker imgesini çekiliyor...",
     "MSG_START_CONTAINER": "Konteyner başlatılıyor...",
     "MSG_SETUP_SUCCESS": "Shadowsocks başarıyla kuruldu!",
@@ -69,6 +84,7 @@
     "MSG_JQ_PLEASE_INSTALL_MANUALLY": "jq yüklü değil. Lütfen jq'yu manuel olarak yükleyin."
   },
   "vn": {
+    "MSG_WELCOME": "Xin chào, chương trình cài đặt Shadowsocks!",
     "MSG_USAGE": "Sử dụng: vpn [lệnh]",
     "MSG_COMMANDS": "Các lệnh:",
     "MSG_SETUP": "Cài đặt và cấu hình vùng chứa Shadowsocks",
@@ -80,7 +96,11 @@
     "MSG_DOCKER_NOT_INSTALLED": "Docker chưa được cài đặt. Đang cài đặt Docker...",
     "MSG_UNSUPPORTED_PM": "Trình quản lý gói không được hỗ trợ. Vui lòng cài đặt Docker theo cách thủ công.",
     "MSG_DOCKER_INSTALLED": "Docker đã được cài đặt.",
+    "MSG_GENERATED_PASSWORD_PROCESS": "Vui lòng nhập mật khẻu. Neųu không nhập, mật khẻu se khoại tạo.",
     "MSG_GENERATED_PASSWORD": "Mật khẩu được tạo:",
+    "MSG_TZ_CHANGE_PROCESS": "Vui lòng nhập thời gian biến đổi (Vd: UTC+3). Neųu không nhập, UTC+3 se biến đổi.",
+    "MSG_TZ_CHANGE": "Vui chọn thời gian biến đổi (Vd: UTC+3) [tuyến]:",
+    "MSG_TZ_CHANGED": "Thời gian biến đổi thanh cong.",
     "MSG_PULL_IMAGE": "Đang tải hình ảnh Docker...",
     "MSG_START_CONTAINER": "Đang khởi động vùng chứa...",
     "MSG_SETUP_SUCCESS": "Shadowsocks đã được thiết lập thành công!",
@@ -92,6 +112,7 @@
     "MSG_JQ_PLEASE_INSTALL_MANUALLY": "jq chưa được cài đặt. Vui lòng cài đặt jq theo cách thủ công."
   },
   "ir": {
+    "MSG_WELCOME": "سلام، برنامه نصب و پیکربندی کانتینر Shadowsocks!",
     "MSG_USAGE": "استفاده: vpn [دستور]",
     "MSG_COMMANDS": "دستورها:",
     "MSG_SETUP": "نصب و پیکربندی کانتینر Shadowsocks",
@@ -103,7 +124,11 @@
     "MSG_DOCKER_NOT_INSTALLED": "Docker نصب نشده است. در حال نصب Docker...",
     "MSG_UNSUPPORTED_PM": "مدیر بسته پشتیبانی نشده است. لطفاً Docker را به صورت دستی نصب کنید.",
     "MSG_DOCKER_INSTALLED": "Docker نصب شده است.",
+    "MSG_GENERATED_PASSWORD_PROCESS": "لطفاً رمز عبور را وارد کنید. اگر رمز عبور را وارد نکنید، رمز عبور تولید خواهد شد.",
     "MSG_GENERATED_PASSWORD": "رمز عبور تولید شده:",
+    "MSG_TZ_CHANGE_PROCESS": "لطفاً زمان‌بندی را وارد کنید (مثلا: UTC+3). اگر زمان‌بندی را وارد نکنید، UTC+3 به طور پیش فرض است.",
+    "MSG_TZ_CHANGE": "لطفاً زمان‌بندی را وارد کنید (مثلا: UTC+3) [اختیاری]:",
+    "MSG_TZ_CHANGED": "زمان‌بندی با موفقیت تغییر کرده است.",
     "MSG_PULL_IMAGE": "در حال بارگیری تصویر Docker...",
     "MSG_START_CONTAINER": "در حال راه‌اندازی کانتینر...",
     "MSG_SETUP_SUCCESS": "Shadowsocks با موفقیت راه‌اندازی شد!",
@@ -115,6 +140,7 @@
     "MSG_JQ_PLEASE_INSTALL_MANUALLY": "jq نصب نشده است. لطفاً jq را به صورت دستی نصب کنید."
   },
   "cn": {
+    "MSG_WELCOME": "欢迎使用 Shadowsocks 安装程序!",
     "MSG_USAGE": "用法: vpn [命令]",
     "MSG_COMMANDS": "命令:",
     "MSG_SETUP": "安装并配置 Shadowsocks 容器",
@@ -126,7 +152,11 @@
     "MSG_DOCKER_NOT_INSTALLED": "Docker 未安装，正在安装 Docker...",
     "MSG_UNSUPPORTED_PM": "不支持的包管理器，请手动安装 Docker。",
     "MSG_DOCKER_INSTALLED": "Docker 已安装。",
+    "MSG_GENERATED_PASSWORD_PROCESS": "请输入密码进行生成。如果不填，将生成随机密码。",
     "MSG_GENERATED_PASSWORD": "生成的密码：",
+    "MSG_TZ_CHANGE_PROCESS": "请输入要更改的时区（例如：UTC+3）。如果不填，将使用 UTC+3 作为默认时区。",
+    "MSG_TZ_CHANGE": "请输入要更改的时区（例如：UTC+3）[可选]:",
+    "MSG_TZ_CHANGED": "时区已更改。",
     "MSG_PULL_IMAGE": "正在拉取 Docker 镜像...",
     "MSG_START_CONTAINER": "正在启动容器...",
     "MSG_SETUP_SUCCESS": "Shadowsocks 安装成功！",
