@@ -6,11 +6,15 @@ REPO_NAME="shadowsocks-installer"
 APP_DIR="/opt/shadowsocks-vpn"
 SCRIPT_DIR="/usr/local/bin"
 SCRIPT_PATH="${SCRIPT_DIR}/vpn"
+ENV_FILE="${APP_DIR}/.env"
 DEFAULT_LANGUAGE="en"
 
 # Create .env file if it doesn't exist and set the language
 create_env_file() {
     if [ ! -f "$ENV_FILE" ]; then
+        # Убедитесь, что папка APP_DIR существует
+        sudo mkdir -p "$APP_DIR"
+        sudo touch "$ENV_FILE"
         echo "LANG=$1" | sudo tee "$ENV_FILE" > /dev/null
         echo -e ".env file is created, current language: $1"
     else
