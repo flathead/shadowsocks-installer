@@ -74,6 +74,8 @@ load_messages() {
   MSG_TZ_CHANGED=$(jq -r ".$LANGUAGE.MSG_TZ_CHANGED // \"Timezone successfully changed.\"" $LANG_FILE)
   MSG_PULL_IMAGE=$(jq -r ".$LANGUAGE.MSG_PULL_IMAGE // \"Pulling Docker image...\"" $LANG_FILE)
   MSG_START_CONTAINER=$(jq -r ".$LANGUAGE.MSG_START_CONTAINER // \"Starting container...\"" $LANG_FILE)
+  MSG_STOP_CONTAINER=$(jq -r ".$LANGUAGE.MSG_STOP_CONTAINER // \"Stopping container...\"" $LANG_FILE)
+  MSG_RESTART_CONTAINER=$(jq -r ".$LANGUAGE.MSG_RESTART_CONTAINER // \"Restarting container...\"" $LANG_FILE)
   MSG_SETUP_SUCCESS=$(jq -r ".$LANGUAGE.MSG_SETUP_SUCCESS // \"Shadowsocks is set up successfully!\"" $LANG_FILE)
   MSG_REMOVING_CONTAINER=$(jq -r ".$LANGUAGE.MSG_REMOVING_CONTAINER // \"Removing Shadowsocks container...\"" $LANG_FILE)
   MSG_CONTAINER_REMOVED=$(jq -r ".$LANGUAGE.MSG_CONTAINER_REMOVED // \"Removing Shadowsocks image...\"" $LANG_FILE)
