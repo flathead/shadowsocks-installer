@@ -14,7 +14,7 @@ METHOD="aes-256-gcm"
 TZ="UTC+3"
 CONTAINER_NAME="shadowsocks"
 LANGUAGE="en"
-LANG_FILE="languages.json"
+LANG_FILE="/opt/shadowsocks-vpn/languages.json"
 
 # Generate a random password
 random_password() {
@@ -81,6 +81,9 @@ check_docker() {
 
 # Setup Shadowsocks container
 setup() {
+  # Remove installer script
+  rm "/tmp/installer.sh"
+  
   # Check jq installation
   if ! command -v jq &>/dev/null; then
     echo -e "${RED}$MSG_JQ_NOT_INSTALLED${RESET}"

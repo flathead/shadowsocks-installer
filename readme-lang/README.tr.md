@@ -28,7 +28,7 @@ Bu depo, Docker kullanarak bir **Shadowsocks** sunucusunu yönetmek için araçl
 ### 1. Yükleyiciyi İndirin ve Çalıştırın
 
 ```bash
-mkdir -p /opt/shadowsocks-vpn && curl -fsSL https://github.com/flathead/shadowsocks-installer/raw/main/shadowsocks.sh -o /opt/shadowsocks-vpn/shadowsocks.sh && sudo ln -s /opt/shadowsocks-vpn/shadowsocks.sh /usr/local/bin/vpn && chmod -x /opt/shadowsocks-vpn/shadowsocks.sh && vpn setup tr
+sudo mkdir -p /opt/shadowsocks-vpn && curl -fsSL https://raw.githubusercontent.com/flathead/shadowsocks-installer/refs/heads/master/shadowsocks.sh -o /opt/shadowsocks-vpn/shadowsocks.sh && curl -fsSl * -o /opt/shadowsocks-vpn/languages.json && sudo ln -sf /opt/shadowsocks-vpn/shadowsocks.sh /usr/local/bin/vpn && sudo chmod +x /opt/shadowsocks-vpn/shadowsocks.sh && vpn setup tr
 ```
 
 ### 2. Kurulumu Doğrulayın
